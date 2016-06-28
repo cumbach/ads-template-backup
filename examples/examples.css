@@ -1,0 +1,36 @@
+body {
+  margin-left: 1em;
+}
+
+iframe {
+  height: 10em;
+  width: 50em;
+  border: #666 solid 1px;
+}
+
+iframe {
+  overflow: hidden;
+}
+
+#reload {
+  position: relative;
+  bottom: .5em;
+}
+
+.nav-tabs {
+  cursor: pointer;
+  border-bottom: none;
+  width: 8em;
+}
+
+pre {
+  border: none;
+  background-color: transparent;
+}
+
+.code {
+  display: none;
+  width: 50em;
+  background: black;
+  border: #666 solid 1px;
+}

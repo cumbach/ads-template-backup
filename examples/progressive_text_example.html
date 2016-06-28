@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Examples</title>
+    <script type="application/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="http://snowbird.watchwith.com/~kirk/assets/bootstrap.min.css">
+    <script type="text/javascript" src='examples.js'></script>
+    <link rel="stylesheet" href="./examples.css">
+  </head>
+
+  <body>
+
+    <iframe id='progressive-text-iframe' src="progressive_text.html"></iframe>
+
+    <div id='reload' class="btn btn-primary btn-xs" onclick='reload()'>Reload</div>
+
+    <ul class="nav nav-tabs">
+      <li id='html-tab'><a data-toggle="tab" onclick="htmlClicked()">HTML</a></li>
+      <li id='js-tab'><a data-toggle="tab" onclick="jsClicked()">JS</a></li>
+    </ul>
+
+    <!-- HTML generated using hilite.me --><div id='progressive-text-html' class='code html' style="background: #202020; overflow:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">
+    <span style="color: #6ab825; font-weight: bold">&lt;html&gt;</span>
+      <span style="color: #6ab825; font-weight: bold">&lt;head&gt;</span>
+          <span style="color: #6ab825; font-weight: bold">&lt;link</span> <span style="color: #bbbbbb">rel=</span><span style="color: #ed9d13">&quot;stylesheet&quot;</span> <span style="color: #bbbbbb">type=</span><span style="color: #ed9d13">&quot;text/css&quot;</span> <span style="color: #bbbbbb">href=</span><span style="color: #ed9d13">&quot;../watchwith.css&quot;</span><span style="color: #6ab825; font-weight: bold">/&gt;</span>
+          <span style="color: #6ab825; font-weight: bold">&lt;script </span><span style="color: #bbbbbb">src=</span><span style="color: #ed9d13">&quot;https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;&lt;/script&gt;</span>
+          <span style="color: #6ab825; font-weight: bold">&lt;script </span><span style="color: #bbbbbb">type=</span><span style="color: #ed9d13">&quot;application/javascript&quot;</span> <span style="color: #bbbbbb">src=</span><span style="color: #ed9d13">&quot;https://code.jquery.com/jquery-2.1.4.min.js&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;&lt;/script&gt;</span>
+          <span style="color: #6ab825; font-weight: bold">&lt;script </span><span style="color: #bbbbbb">src=</span><span style="color: #ed9d13">&quot;../watchwith.js&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;&lt;/script&gt;</span>
+      <span style="color: #6ab825; font-weight: bold">&lt;/head&gt;</span>
+      <span style="color: #6ab825; font-weight: bold">&lt;body&gt;</span>
+
+        <span style="color: #6ab825; font-weight: bold">&lt;div</span> <span style="color: #bbbbbb">id=</span><span style="color: #ed9d13">&quot;progressive-text&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;&lt;/div&gt;</span>
+
+      <span style="color: #6ab825; font-weight: bold">&lt;/body&gt;</span>
+    <span style="color: #6ab825; font-weight: bold">&lt;/html&gt;</span>
+    </pre></div>
+
+
+    <!-- HTML generated using hilite.me --><div id='progressive-text-js' class='code js' style="background: #202020; overflow:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">
+    <span style="color: #6ab825; font-weight: bold">var</span> <span style="color: #d0d0d0">pt</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #d0d0d0">ProgressiveText($(</span><span style="color: #ed9d13">&#39;#progressive-text&#39;</span><span style="color: #d0d0d0">));</span>
+
+    <span style="color: #d0d0d0">pt.init({</span>
+      <span style="color: #d0d0d0">blinkrate:</span> <span style="color: #3677a9">350</span><span style="color: #d0d0d0">,</span>
+      <span style="color: #d0d0d0">sectionPause:</span> <span style="color: #3677a9">800</span><span style="color: #d0d0d0">,</span>
+      <span style="color: #d0d0d0">placementSpeed:</span> <span style="color: #3677a9">300</span>
+    <span style="color: #d0d0d0">})</span>
+
+    <span style="color: #d0d0d0">pt.addText([</span>
+      <span style="color: #d0d0d0">[</span><span style="color: #ed9d13">&quot;This &quot;</span><span style="color: #d0d0d0">,</span> <span style="color: #ed9d13">&#39;is&#39;</span><span style="color: #d0d0d0">,</span> <span style="color: #ed9d13">&#39;\n&#39;</span><span style="color: #d0d0d0">,</span> <span style="color: #ed9d13">&#39;an &#39;</span><span style="color: #d0d0d0">,</span> <span style="color: #ed9d13">&#39;example &#39;</span><span style="color: #d0d0d0">],</span>
+      <span style="color: #d0d0d0">[</span><span style="color: #ed9d13">&quot;This is&quot;</span><span style="color: #d0d0d0">],</span>
+      <span style="color: #d0d0d0">[</span><span style="color: #ed9d13">&quot;This is\nan example&quot;</span><span style="color: #d0d0d0">],</span>
+      <span style="color: #d0d0d0">[</span><span style="color: #ed9d13">&quot;This is&quot;</span><span style="color: #d0d0d0">],</span>
+      <span style="color: #d0d0d0">[</span><span style="color: #ed9d13">&quot;This is\nan example&quot;</span><span style="color: #d0d0d0">],</span>
+      <span style="color: #d0d0d0">[</span><span style="color: #ed9d13">&quot;This is&quot;</span><span style="color: #d0d0d0">],</span>
+      <span style="color: #d0d0d0">[</span><span style="color: #ed9d13">&quot;This is\nan example&quot;</span><span style="color: #d0d0d0">],</span>
+
+      <span style="color: #ed9d13">&quot;SECTIONPAUSE&quot;</span><span style="color: #d0d0d0">,</span>
+
+      <span style="color: #d0d0d0">[</span><span style="color: #ed9d13">&quot;of &quot;</span><span style="color: #d0d0d0">,</span> <span style="color: #ed9d13">&#39;a&#39;</span><span style="color: #d0d0d0">,</span> <span style="color: #ed9d13">&#39;\n&#39;</span><span style="color: #d0d0d0">,</span> <span style="color: #ed9d13">&#39;PROGRESSIVE-TEXT &#39;</span><span style="color: #d0d0d0">,</span> <span style="color: #ed9d13">&#39;element&#39;</span><span style="color: #d0d0d0">],</span>
+      <span style="color: #d0d0d0">[</span><span style="color: #ed9d13">&quot;of a&quot;</span><span style="color: #d0d0d0">],</span>
+      <span style="color: #d0d0d0">[</span><span style="color: #ed9d13">&quot;of a\nPROGRESSIVE-TEXT element&quot;</span><span style="color: #d0d0d0">],</span>
+      <span style="color: #d0d0d0">[</span><span style="color: #ed9d13">&quot;of a&quot;</span><span style="color: #d0d0d0">],</span>
+      <span style="color: #d0d0d0">[</span><span style="color: #ed9d13">&quot;of a\nPROGRESSIVE-TEXT element&quot;</span><span style="color: #d0d0d0">],</span>
+      <span style="color: #d0d0d0">[</span><span style="color: #ed9d13">&quot;of a&quot;</span><span style="color: #d0d0d0">],</span>
+      <span style="color: #d0d0d0">[</span><span style="color: #ed9d13">&quot;of a\nPROGRESSIVE-TEXT element&quot;</span><span style="color: #d0d0d0">],</span>
+
+      <span style="color: #ed9d13">&quot;SECTIONPAUSE&quot;</span><span style="color: #d0d0d0">,</span>
+
+      <span style="color: #d0d0d0">[</span><span style="color: #ed9d13">&quot;Watchwith.com&quot;</span><span style="color: #d0d0d0">],</span>
+      <span style="color: #d0d0d0">[</span><span style="color: #ed9d13">&quot;Watchwith.com\n/libraryUrl&quot;</span><span style="color: #d0d0d0">],</span>
+      <span style="color: #d0d0d0">[</span><span style="color: #ed9d13">&quot;Watchwith.com&quot;</span><span style="color: #d0d0d0">],</span>
+      <span style="color: #d0d0d0">[</span><span style="color: #ed9d13">&quot;Watchwith.com\n/libraryUrl&quot;</span><span style="color: #d0d0d0">],</span>
+      <span style="color: #d0d0d0">[</span><span style="color: #ed9d13">&quot;Watchwith.com&quot;</span><span style="color: #d0d0d0">],</span>
+      <span style="color: #d0d0d0">[</span><span style="color: #ed9d13">&quot;Watchwith.com\n/libraryUrl&quot;</span><span style="color: #d0d0d0">]</span>
+    <span style="color: #d0d0d0">]);</span>
+    </pre></div>
+
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<html>
+  <head>
+      <link rel="stylesheet" type="text/css" href="../watchwith.css"/>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+      <script type="application/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+      <script src="../watchwith.js"></script>
+  </head>
+  <body>
+
+    <img id="main-image"/>
+    <div id="selector-container"></div>
+
+    <script type="text/javascript">
+      var ic = new ImageChange($('#main-image'));
+
+      ic.init({
+        mainImage: "images/arrow1.svg",
+        imageSize: "10em",
+        otherImages: [
+          {location: "images/arrow1.svg", color: "white"},
+          {location: "images/arrow2.svg", color: "grey"},
+          {location: "images/arrow3.svg", color: "red"},
+          {location: "images/arrow4.svg", color: "blue"},
+          {location: "images/arrow5.svg", color: "purple"},
+        ],
+      })
+    </script>
+
+  </body>
+</html>

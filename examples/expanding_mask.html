@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../watchwith.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+    <script type="application/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="../watchwith.js"></script>
+  </head>
+  <body>
+    <div id="hint">
+        <div class="copy copy-initial">Initial</div>
+        <div class="copy copy-expanded">Expanded</div>
+    </div>
+  <script>
+    var es = new ExpandingMask($('#hint'))
+
+    // Initializes with left, right, top or bottom
+    es.init({
+      initialState: "left",
+      aspectPercentage: "23%"
+    });
+  </script>
+  </body>
+</html>

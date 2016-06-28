@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+    <script type="application/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="../watchwith.js"></script>
+    <link rel="stylesheet" href="../watchwith.css">
+
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <div id="rotating-text"></div>
+
+    <script>
+      var rt = new RotatingText(document.querySelector('#rotating-text'));
+
+      rt.init({
+        textDelay: 2
+      })
+
+      rt.addText(
+        ["This is an example",
+        "of a Watchwith element",
+        "that rotates text",
+        "through a box."]);
+
+    </script>
+
+  </body>
+</html>

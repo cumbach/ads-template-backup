@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+    <script type="application/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="../watchwith.js"></script>
+    <link rel="stylesheet" href="../watchwith.css">
+
+
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <div id=card class="thumb">
+    	<a id=image href="#">
+        <div id="shadow"></div>
+    		<span id="text"></span>
+        <div id="bottom"></div>
+    	</a>
+    </div>
+
+    <script type="text/javascript">
+      var fc = new FlipCard();
+
+      fc.init({
+        mainText: "duck duck duck duck",
+        mainFontSize: '.9em',
+        mainHeight: '8em',
+        bottomHeight: '2em',
+        backgroundImg: 'images/duck.jpg'
+      })
+
+    </script>
+  </body>
+</html>

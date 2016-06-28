@@ -1,0 +1,52 @@
+<html>
+  <head>
+      <link rel="stylesheet" type="text/css" href="../watchwith.css"/>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+      <script type="application/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+      <script src="../watchwith.js"></script>
+  </head>
+  <body>
+
+    <div id="progressive-text"></div>
+
+    <script type="text/javascript">
+      var pt = new ProgressiveText($('#progressive-text'));
+
+      pt.init({
+        blinkrate: 350,
+        sectionPause: 800,
+        placementSpeed: 300
+      })
+
+      pt.addText([
+        ["This ", 'is', '\n', 'an ', 'example '],
+        ["This is"],
+        ["This is\nan example"],
+        ["This is"],
+        ["This is\nan example"],
+        ["This is"],
+        ["This is\nan example"],
+
+        "SECTIONPAUSE",
+
+        ["of ", 'a', '\n', 'PROGRESSIVE-TEXT ', 'element'],
+        ["of a"],
+        ["of a\nPROGRESSIVE-TEXT element"],
+        ["of a"],
+        ["of a\nPROGRESSIVE-TEXT element"],
+        ["of a"],
+        ["of a\nPROGRESSIVE-TEXT element"],
+
+        "SECTIONPAUSE",
+
+        ["Watchwith.com"],
+        ["Watchwith.com\n/libraryUrl"],
+        ["Watchwith.com"],
+        ["Watchwith.com\n/libraryUrl"],
+        ["Watchwith.com"],
+        ["Watchwith.com\n/libraryUrl"]
+      ]);
+    </script>
+
+  </body>
+</html>

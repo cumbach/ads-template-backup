@@ -1,0 +1,13 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <defs>
+        <style>
+            .cls-1 {
+            stroke: blue;
+            fill: transparent;
+            stroke-width: .4em;
+            }
+        </style>
+    </defs>
+    <title>arrow</title>
+    <path class="cls-1" d="M60 20 L15 55 60 90"/>
+</svg>

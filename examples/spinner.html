@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+    <script type="application/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="../watchwith.js"></script>
+    <link rel="stylesheet" href="../watchwith.css">
+
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <div id="spinner-wrap" class="hidden"></div>
+    <script>
+      var spinner = new Spinner($('#spinner-wrap'));
+      spinner.init({
+        numImages: 12,
+        spriteWidth: 7.7,
+        // These variables are for uneven spritesheets!
+        firstSpriteOffset: -0.7,
+        nextSpritesOffset: 1.7,
+        spritesheet: "./images/cubes.png"
+      })
+
+    </script>
+  </body>
+</html>
