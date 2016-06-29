@@ -3,14 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title>Examples</title>
+
     <script type="application/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-      	<link rel="stylesheet" href="http://snowbird.watchwith.com/~kirk/assets/bootstrap.min.css">
+  	<link rel="stylesheet" href="http://snowbird.watchwith.com/~kirk/assets/bootstrap.min.css">
     <script type="text/javascript" src='examples.js'></script>
     <link rel="stylesheet" href="./examples.css">
   </head>
   <body>
-  	<h1 class="page-title">Rotating Text Example</h1>
-    <iframe id='rotating-text-iframe' src="rotating_text.html"></iframe>
+    <h1 class="page-title">Slide In Out Example</h1>
+
+    <iframe id='slide-in-out-iframe' src="slide_in_out.html"></iframe>
+
     <div id='reload' class="btn btn-primary btn-xs" onclick='reload()'>Reload</div>
 
     <ul class="nav nav-tabs">
@@ -18,7 +21,7 @@
       <li id='js-tab'><a data-toggle="tab" onclick="jsClicked()">JS</a></li>
     </ul>
 
-    <!-- HTML generated using hilite.me --><div id='rotating-text-html' class='code html' style="background: #202020; overflow:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">
+    <!-- HTML generated using hilite.me --><div id='in-out-slider-html' class='code html' style="background: #202020; overflow:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">
     <span style="color: #6ab825; font-weight: bold">&lt;html&gt;</span>
       <span style="color: #6ab825; font-weight: bold">&lt;head&gt;</span>
         <span style="color: #6ab825; font-weight: bold">&lt;script </span><span style="color: #bbbbbb">type=</span><span style="color: #ed9d13">&quot;text/javascript&quot;</span> <span style="color: #bbbbbb">src=</span><span style="color: #ed9d13">&quot;https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;&lt;/script&gt;</span>
@@ -31,25 +34,22 @@
       <span style="color: #6ab825; font-weight: bold">&lt;/head&gt;</span>
       <span style="color: #6ab825; font-weight: bold">&lt;body&gt;</span>
 
-        <span style="color: #6ab825; font-weight: bold">&lt;div</span> <span style="color: #bbbbbb">id=</span><span style="color: #ed9d13">&quot;rotating-text&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;&lt;/div&gt;</span>
+        <span style="color: #6ab825; font-weight: bold">&lt;div</span> <span style="color: #bbbbbb">class=</span><span style="color: #ed9d13">&quot;sliding-wrapper&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;&lt;/div&gt;</span>
 
       <span style="color: #6ab825; font-weight: bold">&lt;/body&gt;</span>
     <span style="color: #6ab825; font-weight: bold">&lt;/html&gt;</span>
     </pre></div>
 
-    <!-- HTML generated using hilite.me --><div id='rotating-text-js' class='code js' style="background: #202020; overflow:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">
-    <span style="color: #6ab825; font-weight: bold">var</span> <span style="color: #d0d0d0">rt</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #d0d0d0">RotatingText(</span><span style="color: #24909d">document</span><span style="color: #d0d0d0">.querySelector(</span><span style="color: #ed9d13">&#39;#rotating-text&#39;</span><span style="color: #d0d0d0">));</span>
+    <!-- HTML generated using hilite.me --><div id='in-out-slider-js' class='code js' style="background: #202020; overflow:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">
+    <span style="color: #6ab825; font-weight: bold">var</span> <span style="color: #d0d0d0">sio</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #d0d0d0">SlideInOut($(</span><span style="color: #ed9d13">&#39;.sliding-wrapper&#39;</span><span style="color: #d0d0d0">));</span>
 
-    <span style="color: #d0d0d0">rt.init({</span>
-      <span style="color: #d0d0d0">textDelay:</span> <span style="color: #d0d0d0"></span><span style="color: #3677a9">2</span><span style="color: #d0d0d0">,</span>
+    <span style="color: #d0d0d0">sio.init({</span>
+      <span style="color: #d0d0d0">slideInFrom:</span> <span style="color: #ed9d13">&quot;left&quot;</span><span style="color: #d0d0d0">,</span> <span style="color: #999999; font-style: italic">//also takes right, top and bottom</span>
+      <span style="color: #d0d0d0">timeToClose:</span> <span style="color: #3677a9">6</span><span style="color: #d0d0d0">,</span>
+      <span style="color: #d0d0d0">sliderSpeed:</span> <span style="color: #3677a9">1</span>
     <span style="color: #d0d0d0">})</span>
-
-    <span style="color: #d0d0d0">rt.addText(</span>
-      <span style="color: #d0d0d0">[</span><span style="color: #ed9d13">&quot;This is an example&quot;</span><span style="color: #d0d0d0">,</span>
-      <span style="color: #ed9d13">&quot;of a Watchwith element&quot;</span><span style="color: #d0d0d0">,</span>
-      <span style="color: #ed9d13">&quot;that rotates text&quot;</span><span style="color: #d0d0d0">,</span>
-      <span style="color: #ed9d13">&quot;through a box.&quot;</span><span style="color: #d0d0d0">]);</span>
     </pre></div>
+
 
   </body>
 </html>

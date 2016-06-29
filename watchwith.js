@@ -682,7 +682,6 @@
     this.closeSpeed = (opts.closeSpeed ? opts.closeSpeed : this.closeSpeed);
 
     this.element.on('click', $.proxy(this.closeButtonClicked, this));
-
   }
 
   CloseButton.prototype.closeButtonClicked = function() {
@@ -706,7 +705,55 @@
             top: windowHeight + "px"
         });
     }
+  }
 
+  var SlideInOut = function SlideInOut(element) {
+      this.element = element;
+      this.slideInFrom = "left";
+      this.timeToClose = 10;
+      this.sliderSpeed = .5;
+
+      this.DIRECTIONS = {
+          left:  "left",
+          right: "right",
+          top: "top",
+          bottom: "bottom"
+
+      };
+  };
+
+  window['SlideInOut'] = SlideInOut;
+
+  SlideInOut.prototype.init = function(opts) {
+    this.slideInFrom = (opts.slideInFrom ? opts.slideInFrom : this.slideInFrom);
+    this.timeToClose = (opts.timeToClose ? opts.timeToClose : this.timeToClose);
+    this.sliderSpeed = (opts.sliderSpeed ? opts.sliderSpeed : this.sliderSpeed);
+
+    var className = this.element[0].className;
+    var sliderTween = new TimelineLite();
+
+    switch (this.slideInFrom) {
+      case this.DIRECTIONS.left :
+        this.element.css("left", -window.innerWidth);
+        sliderTween.to("." + className, this.sliderSpeed, {left: 0, ease: Power2.linear});
+        sliderTween.to("." + className, this.sliderSpeed, {left: -window.innerWidth, delay: this.timeToClose, ease: Power2.linear});
+        break;
+      case this.DIRECTIONS.right :
+        this.element.css("right", -window.innerWidth);
+        sliderTween.to("." + className, this.sliderSpeed, {right: 0, ease: Power2.linear});
+        sliderTween.to("." + className, this.sliderSpeed, {right: -window.innerWidth, delay: this.timeToClose, ease: Power2.linear});
+        break;
+      case this.DIRECTIONS.top :
+        this.element.css("top", -window.innerHeight);
+        sliderTween.to("." + className, this.sliderSpeed, {top: 0, ease: Power2.linear});
+        sliderTween.to("." + className, this.sliderSpeed, {top: -window.innerHeight, delay: this.timeToClose, ease: Power2.linear});
+        break;
+      case this.DIRECTIONS.bottom :
+        this.element.css("bottom", -window.innerHeight);
+        sliderTween.to("." + className, this.sliderSpeed, {bottom: 0, ease: Power2.linear});
+        sliderTween.to("." + className, this.sliderSpeed, {bottom: -window.innerHeight, delay: this.timeToClose, ease: Power2.linear});
+        break;
+    }
   }
 
 })();

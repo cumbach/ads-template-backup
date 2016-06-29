@@ -251,3 +251,16 @@ h1 {
   position: absolute;
   cursor: pointer;
 }
+
+
+/*SLIDE IN OUT*/
+.sliding-wrapper {
+  width: 8em;
+  height: 1em;
+  position: absolute;
+  background: blue;
+  font-size: 1.6em;
+  text-align: -webkit-center;
+  padding: .5em;
+  margin: 1.5em;
+}
