@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+    <script type="application/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="../watchwith.js"></script>
+    <link rel="stylesheet" href="../watchwith.css">
+
+
+    <meta charset="utf-8">
+  </head>
+  <body>
+
+    <div id="bounce-text">BOUNCE!</div>
+
+    <script type="text/javascript">
+
+      var bounce = new BounceText(document.getElementById('bounce-text'));
+      bounce.init({
+        speed: 1.7,
+        textFollowDelay: 0.03,
+        startLocation: ["top", "left"],
+        bounciness: 1
+      })
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+    <script type="application/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="../watchwith.js"></script>
+    <link rel="stylesheet" href="../watchwith.css">
+
+
+    <meta charset="utf-8">
+  </head>
+  <body>
+
+    <div id="assemble-text">ASSEMBLE TEXT!</div>
+
+    <script type="text/javascript">
+
+      var assemble = new AssembleText(document.getElementById('assemble-text'));
+      assemble.init({
+        speed: 1.2
+      })
+
+    </script>
+
+  </body>
+</html>

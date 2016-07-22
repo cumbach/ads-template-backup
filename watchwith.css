@@ -1,3 +1,5 @@
+@import 'https://fonts.googleapis.com/css?family=Kanit:800i';
+
 html, body {
     margin:0;
     padding:0;
@@ -6,6 +8,7 @@ html, body {
     font-family: sans-serif, helvetica, 'Helvetica Neue', Arial;
     color: white;
     overflow: hidden;
+
 }
 
 /*ROTATING TEXT*/
@@ -263,4 +266,42 @@ h1 {
   text-align: -webkit-center;
   padding: .5em;
   margin: 1.5em;
+}
+
+
+/*CENTER EXPAND*/
+.center-expanding-wrapper {
+  background-position: center center;
+  box-sizing: border-box;
+  position: relative;
+  left: 15em;
+}
+
+
+/*BOUNCE*/
+#bounce-text {
+    font-family: 'Kanit', sans-serif;
+    font-style: italic;
+    font-size: 8em;
+    position: absolute;
+    left: 1em;
+}
+#bounce-text span {
+    color: blue;
+    display: inline-block;
+    position: relative;
+    text-shadow:-5px -5px 20px rgba(225,225,225,.7);
+}
+
+
+/*ASSEMBLE*/
+#assemble-text{
+  font-size: 4em;
+  position: absolute;
+  left: 4em;
+  top: .9em;
+}
+
+#assemble-text span {
+    display: inline-block;
 }

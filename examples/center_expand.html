@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+    <script type="application/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="../watchwith.js"></script>
+    <link rel="stylesheet" href="../watchwith.css">
+
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <div class="center-expanding-wrapper"></div>
+
+    <script>
+      var cew = new CenterExpand($('.center-expanding-wrapper'));
+
+      cew.init({
+        timeToOpen: 2,
+        backgroundImg: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/M101_hires_STScI-PRC2006-10a.jpg/1280px-M101_hires_STScI-PRC2006-10a.jpg',
+        imgWidth: 16,
+        imgHeight: 12
+      })
+
+    </script>
+
+  </body>
+</html>

@@ -718,7 +718,6 @@
           right: "right",
           top: "top",
           bottom: "bottom"
-
       };
   };
 
@@ -755,5 +754,132 @@
         break;
     }
   }
+
+  var CenterExpand = function CenterExpand(element) {
+      this.element = element;
+      this.timeToOpen = 1;
+      this.imgWidth = 10;
+      this.imgHeight = 10;
+
+  };
+
+
+  window['CenterExpand'] = CenterExpand;
+
+  CenterExpand.prototype.init = function(opts) {
+    this.timeToOpen = (opts.timeToOpen ? opts.timeToOpen : this.timeToOpen);
+    this.backgroundImg = (opts.backgroundImg ? opts.backgroundImg : this.backgroundImg);
+    this.imgWidth = (opts.imgWidth ? opts.imgWidth : this.imgWidth);
+    this.imgHeight = (opts.imgHeight ? opts.imgHeight : this.imgHeight);
+    this.imgPadding = this.imgWidth / 2;
+
+    this.element.css({'background': 'url(' + this.backgroundImg + ')',
+                      'background-size': 'cover',
+                      'background-clip': 'content-box',
+                      'width': this.imgWidth + 'em',
+                      'height': this.imgHeight + 'em',
+                      'padding': '0 ' + this.imgPadding + 'em'})
+
+    TweenMax.to('.center-expanding-wrapper', this.timeToOpen, {
+        padding: '0 0',
+    });
+  }
+
+
+
+  var BounceText = function BounceText(element) {
+    this.element = element;
+    this.speed = 1.7;
+    this.textFollowDelay = 0.03;
+    this.bounciness = 1;
+    this.startLocation = ["top", "left"];
+  }
+
+  window['BounceText'] = BounceText;
+
+  BounceText.prototype.init = function(opts){
+    this.speed = (opts.speed ? opts.speed : this.speed);
+    this.textFollowDelay = (opts.textFollowDelay ? opts.textFollowDelay : this.textFollowDelay);
+    this.bounciness = (opts.bounciness ? opts.bounciness : this.bounciness);
+    this.startLocation = (opts.startLocation ? opts.startLocation : this.startLocation);
+
+    this.addSpans(this.element, this.element.innerText);
+    this.animateBounceText();
+  }
+
+  BounceText.prototype.addSpans = function(el, text){
+    var letters = text.split('');
+    var html = '';
+    for (var i = 0; i < letters.length; i++) {
+        html += '<span>' + letters[i] + '</span>';
+    }
+    el.innerHTML = html;
+  }
+
+  BounceText.prototype.animateBounceText = function () {
+    var vert = -1;
+    var horiz = -1;
+    this.startLocation.forEach(function(loc){
+      if (loc === "bottom") {
+        vert = 1;
+      } else if (loc === "right") {
+        horiz = 1;
+      }
+    })
+
+    TweenMax.staggerFromTo("#" + this.element.id + " span", this.speed, {
+        y: vert * window.innerHeight * this.bounciness,
+        x: horiz * window.innerHeight * this.bounciness,
+    }, {
+        y: 0,
+        x: 0,
+        ease: Bounce.easeOut,
+    }, this.textFollowDelay);
+  };
+
+
+  var AssembleText = function AssembleText(element) {
+    this.element = element;
+    this.speed = 1.7;
+    this.textFollowDelay = 0.03;
+    this.bounciness = 1;
+    this.startLocation = ["top", "left"];
+  }
+
+  window['AssembleText'] = AssembleText;
+
+  AssembleText.prototype.init = function(opts){
+    this.speed = (opts.speed ? opts.speed : this.speed);
+    this.textFollowDelay = (opts.textFollowDelay ? opts.textFollowDelay : this.textFollowDelay);
+    this.bounciness = (opts.bounciness ? opts.bounciness : this.bounciness);
+    this.startLocation = (opts.startLocation ? opts.startLocation : this.startLocation);
+
+    this.addSpans(this.element, this.element.innerText);
+    this.animateAssembleText();
+  }
+
+  AssembleText.prototype.addSpans = function(el, text){
+    this.letters = text.split('');
+    var html = '';
+    for (var i = 0; i < this.letters.length; i++) {
+      if (this.letters[i] === ' ') { this.letters[i] = '&nbsp' }
+      html += '<span>' + this.letters[i] + '</span>';
+    }
+    el.innerHTML = html;
+  }
+
+  AssembleText.prototype.animateAssembleText = function () {
+    for (var i = 0; i <= this.letters.length; i++) {
+      TweenMax.fromTo("#" + this.element.id + " span:nth-child(" + i + ")", this.speed, {
+          y: window.innerHeight * (Math.random() * 2 - 1) * 4,
+          x: window.innerHeight * (Math.random() * 2 - 1) * 4,
+
+      }, {
+          y: 0,
+          x: 0,
+      });
+    }
+  };
+
 
 })();
